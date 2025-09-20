@@ -112,3 +112,8 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Force dark theme */
+html {
+  @apply dark;
+}
