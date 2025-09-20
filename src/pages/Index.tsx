@@ -7,9 +7,9 @@ import { ExportPanel } from "@/components/ExportPanel";
 const Index = () => {
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-background">
+      <div className="min-h-screen flex w-full app-background">
         <AppSidebar />
-        <main className="flex-1">
+        <main className="flex-1 bg-gradient-to-br from-background/50 to-background backdrop-blur-sm">
           <Routes>
             <Route path="/" element={<BookmarkViewer />} />
             <Route path="/export" element={<ExportPanel />} />

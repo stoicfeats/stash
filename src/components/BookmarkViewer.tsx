@@ -61,17 +61,22 @@ export function BookmarkViewer() {
 
   return (
     <div className="flex-1 p-6">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h2 className="text-2xl font-semibold text-foreground">Your Bookmarks</h2>
-          <p className="text-muted-foreground">{bookmarks.length} saved tweets</p>
-        </div>
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm">
-            <Upload className="h-4 w-4 mr-2" />
-            Upload JSON
-          </Button>
-          <ViewToggle value={viewMode} onValueChange={setViewMode} />
+      <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 mb-6 shadow-sm">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="text-2xl font-semibold text-foreground">Your Bookmarks</h2>
+            <p className="text-muted-foreground flex items-center mt-1">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+              {bookmarks.length} saved tweets
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <Button variant="outline" size="sm" className="shadow-sm">
+              <Upload className="h-4 w-4 mr-2" />
+              Upload JSON
+            </Button>
+            <ViewToggle value={viewMode} onValueChange={setViewMode} />
+          </div>
         </div>
       </div>
       

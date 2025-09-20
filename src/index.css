@@ -117,3 +117,12 @@ All colors MUST be HSL.
 html {
   @apply dark;
 }
+
+/* Professional background patterns */
+.app-background {
+  background: hsl(var(--background));
+  background-image: 
+    radial-gradient(circle at 20% 50%, hsl(216 87% 53% / 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(263 70% 60% / 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, hsl(216 87% 53% / 0.03) 0%, transparent 50%);
+}

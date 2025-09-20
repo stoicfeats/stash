@@ -10,12 +10,12 @@ export function ExportPanel() {
   return (
     <div className="flex-1 p-6">
       <div className="max-w-2xl mx-auto space-y-8">
-        <div>
+        <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 shadow-sm">
           <h2 className="text-2xl font-semibold text-foreground mb-2">Export Bookmarks</h2>
           <p className="text-muted-foreground">Connect your Twitter account or provide a URL to export your bookmarks.</p>
         </div>
 
-        <Card>
+        <Card className="bg-card/80 backdrop-blur-sm border-border/50 shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Twitter className="h-5 w-5 text-blue-400" />
@@ -42,7 +42,7 @@ export function ExportPanel() {
           </div>
         </div>
 
-        <Card>
+        <Card className="bg-card/80 backdrop-blur-sm border-border/50 shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Link className="h-5 w-5" />
@@ -75,7 +75,7 @@ export function ExportPanel() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-card/80 backdrop-blur-sm border-border/50 shadow-sm">
           <CardHeader>
             <CardTitle>Export Options</CardTitle>
             <CardDescription>
