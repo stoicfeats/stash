@@ -12,6 +12,7 @@ interface Bookmark {
   likes: number;
   retweets: number;
   hasImage: boolean;
+  imageUrl?: string;
 }
 
 interface BookmarkCardProps {
@@ -66,8 +67,18 @@ export function BookmarkCard({ bookmarks }: BookmarkCardProps) {
                 <p className="text-foreground text-lg leading-relaxed mb-6">{currentBookmark.text}</p>
                 
                 {currentBookmark.hasImage && (
-                  <div className="w-full h-64 bg-muted rounded-lg mb-6 flex items-center justify-center">
-                    <span className="text-muted-foreground">Image Content</span>
+                  <div className="w-full h-64 rounded-lg mb-6 overflow-hidden">
+                    {currentBookmark.imageUrl ? (
+                      <img 
+                        src={currentBookmark.imageUrl} 
+                        alt="Tweet content"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-muted flex items-center justify-center">
+                        <span className="text-muted-foreground">Image Content</span>
+                      </div>
+                    )}
                   </div>
                 )}
                 

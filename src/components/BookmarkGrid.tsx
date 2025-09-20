@@ -10,6 +10,7 @@ interface Bookmark {
   likes: number;
   retweets: number;
   hasImage: boolean;
+  imageUrl?: string;
 }
 
 interface BookmarkGridProps {
@@ -39,8 +40,18 @@ export function BookmarkGrid({ bookmarks }: BookmarkGridProps) {
             <p className="text-sm mb-3 leading-relaxed">{bookmark.text}</p>
             
             {bookmark.hasImage && (
-              <div className="w-full h-32 bg-muted rounded-lg mb-3 flex items-center justify-center">
-                <span className="text-xs text-muted-foreground">Image</span>
+              <div className="w-full h-32 rounded-lg mb-3 overflow-hidden">
+                {bookmark.imageUrl ? (
+                  <img 
+                    src={bookmark.imageUrl} 
+                    alt="Tweet content"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-muted flex items-center justify-center">
+                    <span className="text-xs text-muted-foreground">Image</span>
+                  </div>
+                )}
               </div>
             )}
             

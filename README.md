@@ -1,73 +1,126 @@
-# Welcome to your Lovable project
+# Stash - Twitter Bookmark Exporter & Viewer
 
-## Project info
+A beautiful Twitter bookmark manager that allows you to export your Twitter bookmarks as JSON and view them in three different formats: cards, gallery, and grid.
 
-**URL**: https://lovable.dev/projects/b629a9ab-8d3f-4ccd-9b06-90bb5b9a50ec
+## Features
 
-## How can I edit this code?
+- 📱 **Three View Modes**: Card, Gallery, and Grid layouts
+- 🖼️ **Image Support**: Display images from tweets
+- 📤 **JSON Upload**: Upload your Twitter bookmarks JSON file
+- 🎨 **Modern UI**: Built with React, TypeScript, and Tailwind CSS
+- ⚡ **Fast & Responsive**: Optimized for performance
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+### Frontend
+- React 18 with TypeScript
+- Vite for build tooling
+- Tailwind CSS for styling
+- shadcn/ui components
+- React Router for navigation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b629a9ab-8d3f-4ccd-9b06-90bb5b9a50ec) and start prompting.
+### Backend
+- Node.js with Express
+- Multer for file uploads
+- CORS enabled for cross-origin requests
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd stash
+```
 
-Follow these steps:
+2. Install dependencies:
+```bash
+# Install frontend dependencies
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install backend dependencies
+cd backend
+npm install
+cd ..
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. Start the development servers:
+```bash
+# Option 1: Use the provided script
+./start-dev.sh
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Option 2: Start manually
+# Terminal 1 - Backend
+cd backend
+npm run dev
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Terminal 2 - Frontend
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Usage
 
-**Use GitHub Codespaces**
+1. **Upload Bookmarks**: Click the "Upload JSON" button to upload your Twitter bookmarks JSON file
+2. **View Modes**: Switch between Card, Gallery, and Grid views using the toggle
+3. **Browse**: Navigate through your bookmarks with images and full content
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Sample Data
 
-## What technologies are used for this project?
+A sample JSON file is included at `backend/sample-bookmarks.json` for testing purposes.
 
-This project is built with:
+## API Endpoints
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `GET /api/bookmarks` - Get all bookmarks
+- `POST /api/upload` - Upload bookmarks JSON file
 
-## How can I deploy this project?
+## Development
 
-Simply open [Lovable](https://lovable.dev/projects/b629a9ab-8d3f-4ccd-9b06-90bb5b9a50ec) and click on Share -> Publish.
+### Backend
+```bash
+cd backend
+npm run dev
+```
 
-## Can I connect a custom domain to my Lovable project?
+### Frontend
+```bash
+npm run dev
+```
 
-Yes, you can!
+## Project Structure
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+stash/
+├── backend/
+│   ├── server.js
+│   ├── sample-bookmarks.json
+│   └── package.json
+├── src/
+│   ├── components/
+│   │   ├── BookmarkCard.tsx
+│   │   ├── BookmarkGallery.tsx
+│   │   ├── BookmarkGrid.tsx
+│   │   └── BookmarkViewer.tsx
+│   ├── api/
+│   │   └── bookmarks.ts
+│   └── ...
+├── start-dev.sh
+└── README.md
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+MIT License

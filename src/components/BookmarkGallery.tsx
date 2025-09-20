@@ -9,6 +9,7 @@ interface Bookmark {
   likes: number;
   retweets: number;
   hasImage: boolean;
+  imageUrl?: string;
 }
 
 interface BookmarkGalleryProps {
@@ -39,8 +40,18 @@ export function BookmarkGallery({ bookmarks }: BookmarkGalleryProps) {
               <p className="text-foreground mb-4 leading-relaxed">{bookmark.text}</p>
               
               {bookmark.hasImage && (
-                <div className="w-full max-w-md h-48 bg-muted rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-muted-foreground">Image Content</span>
+                <div className="w-full max-w-md h-48 rounded-lg mb-4 overflow-hidden">
+                  {bookmark.imageUrl ? (
+                    <img 
+                      src={bookmark.imageUrl} 
+                      alt="Tweet content"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                      <span className="text-muted-foreground">Image Content</span>
+                    </div>
+                  )}
                 </div>
               )}
               
