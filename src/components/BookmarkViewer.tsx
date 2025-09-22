@@ -79,7 +79,7 @@ export function BookmarkViewer() {
 
   return (
     <div className="flex-1 p-6">
-      <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 mb-6 shadow-sm">
+      <div className="bg-card/20 backdrop-blur-md border border-border/20 rounded-lg p-6 mb-6 shadow-sm hover:bg-card/30 transition-colors">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-semibold text-foreground">Your Bookmarks</h2>

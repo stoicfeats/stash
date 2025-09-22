@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen app-background">
       {/* Header */}
-      <header className="border-b border-border/50 bg-card/30 backdrop-blur-sm">
+      <header className="border-b border-border/20 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -17,7 +17,7 @@ export default function Home() {
               <h1 className="text-2xl font-bold text-foreground">Stash</h1>
             </div>
             <nav className="flex items-center gap-6">
-              <Link to="/dashboard" className="text-foreground hover:text-primary transition-colors">
+              <Link to="/dashboard" className="text-foreground/80 hover:text-primary transition-colors">
                 My Bookmarks
               </Link>
               <Button asChild variant="hero">
@@ -71,13 +71,13 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* View Modes */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-colors">
+            <Card className="bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-all duration-300 hover:border-primary/20">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary-gradient rounded-lg flex items-center justify-center mb-4">
                   <Grid3X3 className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Multiple View Modes</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-foreground">Multiple View Modes</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   Switch between grid, gallery, and card views to find the perfect layout for your bookmarks.
                 </CardDescription>
               </CardHeader>
@@ -91,13 +91,13 @@ export default function Home() {
             </Card>
 
             {/* Gallery View */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-colors">
+            <Card className="bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-all duration-300 hover:border-primary/20">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary-gradient rounded-lg flex items-center justify-center mb-4">
                   <Images className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Beautiful Gallery</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-foreground">Beautiful Gallery</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   Experience your bookmarks in a stunning gallery view with smooth navigation and zoom features.
                 </CardDescription>
               </CardHeader>
@@ -110,13 +110,13 @@ export default function Home() {
             </Card>
 
             {/* Card View */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/70 transition-colors">
+            <Card className="bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-all duration-300 hover:border-primary/20">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary-gradient rounded-lg flex items-center justify-center mb-4">
                   <CreditCard className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle>Card Navigation</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-foreground">Card Navigation</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   Browse through your bookmarks one by one with intuitive left and right navigation controls.
                 </CardDescription>
               </CardHeader>
@@ -131,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-6 bg-card/20">
+      <section className="py-20 px-6 bg-background/50 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
@@ -188,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8 px-6">
+      <footer className="border-t border-border/20 py-8 px-6 bg-background/60 backdrop-blur-sm">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-6 h-6 bg-primary-gradient rounded flex items-center justify-center">
