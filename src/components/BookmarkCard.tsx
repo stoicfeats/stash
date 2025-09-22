@@ -46,7 +46,7 @@ export function BookmarkCard({ bookmarks }: BookmarkCardProps) {
           <ChevronLeft className="h-4 w-4" />
         </Button>
         
-        <Card className="flex-1 mx-4">
+        <Card className="flex-1 mx-4 bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-colors">
           <CardContent className="p-8">
             <div className="flex items-start space-x-4">
               <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center flex-shrink-0">
@@ -66,20 +66,21 @@ export function BookmarkCard({ bookmarks }: BookmarkCardProps) {
                 
                 <p className="text-foreground text-lg leading-relaxed mb-6">{currentBookmark.text}</p>
                 
-                {currentBookmark.hasImage && (
+                {currentBookmark.hasImage && currentBookmark.imageUrl ? (
                   <div className="w-full h-64 rounded-lg mb-6 overflow-hidden">
-                    {currentBookmark.imageUrl ? (
-                      <img 
-                        src={currentBookmark.imageUrl} 
-                        alt="Tweet content"
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-muted flex items-center justify-center">
-                        <span className="text-muted-foreground">Image Content</span>
-                      </div>
-                    )}
+                    <img 
+                      src={currentBookmark.imageUrl} 
+                      alt="Tweet content"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                ) : currentBookmark.hasImage ? (
+                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden bg-muted flex items-center justify-center">
+                    <span className="text-muted-foreground text-sm">Image unavailable</span>
+                  </div>
+                ) : (
+                  // Consistent spacing when no image
+                  <div className="mb-4"></div>
                 )}
                 
                 <div className="flex items-center space-x-8 text-muted-foreground">
