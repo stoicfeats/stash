@@ -63,6 +63,9 @@ export function ExportPanel() {
                 value={twitterUrl}
                 onChange={(e) => setTwitterUrl(e.target.value)}
               />
+              <p className="text-xs text-muted-foreground">
+                Note: Twitter authentication requires backend functionality. Consider connecting to Supabase for full Twitter integration.
+              </p>
             </div>
             <Button 
               className="w-full" 
