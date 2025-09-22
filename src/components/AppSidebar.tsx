@@ -1,5 +1,4 @@
-import { BookOpen, Download, User, Settings, LogOut, Star } from "lucide-react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Bookmark, Download, User, Settings, LogOut, Star } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -14,24 +13,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-const navigationItems = [
-  {
-    title: "View All Bookmarks",
-    url: "/",
-    icon: BookOpen,
-  },
-  {
-    title: "Export Bookmarks",
-    url: "/export",
-    icon: Download,
-  },
-];
+type ActiveView = "bookmarks" | "export";
 
-export function AppSidebar() {
-  const location = useLocation();
-  const currentPath = location.pathname;
+interface AppSidebarProps {
+  activeView: ActiveView;
+  onViewChange: (view: ActiveView) => void;
+}
 
-  const isActive = (path: string) => currentPath === path;
+export function AppSidebar({ activeView, onViewChange }: AppSidebarProps) {
 
   return (
     <Sidebar className="w-64 border-r border-sidebar-border bg-sidebar-background/95 backdrop-blur-sm">
@@ -54,24 +43,24 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-2 p-4">
-              {navigationItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <NavLink 
-                      to={item.url} 
-                      end 
-                      className={({ isActive }) =>
-                        isActive 
-                          ? "bg-sidebar-accent text-sidebar-primary font-medium border border-sidebar-border/50 shadow-sm" 
-                          : "hover:bg-sidebar-accent/50 text-sidebar-foreground transition-all duration-200"
-                      }
-                    >
-                      <item.icon className="mr-3 h-4 w-4" />
-                      <span>{item.title}</span>
-                    </NavLink>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              <SidebarMenuItem>
+                <SidebarMenuButton 
+                  className={`w-full justify-start ${activeView === 'bookmarks' ? 'bg-sidebar-accent text-sidebar-primary font-medium border border-sidebar-border/50 shadow-sm' : 'hover:bg-sidebar-accent/50 text-sidebar-foreground transition-all duration-200'}`}
+                  onClick={() => onViewChange('bookmarks')}
+                >
+                  <Bookmark className="mr-3 h-4 w-4" />
+                  <span>View All Bookmarks</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton 
+                  className={`w-full justify-start ${activeView === 'export' ? 'bg-sidebar-accent text-sidebar-primary font-medium border border-sidebar-border/50 shadow-sm' : 'hover:bg-sidebar-accent/50 text-sidebar-foreground transition-all duration-200'}`}
+                  onClick={() => onViewChange('export')}
+                >
+                  <Download className="mr-3 h-4 w-4" />
+                  <span>Export Bookmarks</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
