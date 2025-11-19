@@ -21,7 +21,7 @@ export function BookmarkGrid({ bookmarks }: BookmarkGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {bookmarks.map((bookmark) => (
-        <Card key={bookmark.id} className="hover:shadow-lg transition-all duration-300 bg-card/20 backdrop-blur-md border-border/20 hover:border-primary/30 hover:bg-card/30">
+        <Card key={bookmark.id} className="card card-hover hover:shadow-lg transition-all duration-300">
           <CardHeader className="pb-3">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-muted rounded-full flex items-center justify-center">

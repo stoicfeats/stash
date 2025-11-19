@@ -133,3 +133,17 @@ body {
   @apply bg-background text-foreground;
   min-height: 100vh;
 }
+
+/* Consistent card styling for dark theme */
+.card {
+  @apply bg-card/80 backdrop-blur-sm border-border/30;
+}
+
+.card-hover {
+  @apply hover:bg-card/90 hover:border-primary/30 transition-all duration-300;
+}
+
+/* Consistent button styling */
+.btn-hero {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300;
+}

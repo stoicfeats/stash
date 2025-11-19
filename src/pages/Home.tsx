@@ -20,7 +20,7 @@ export default function Home() {
               <Link to="/dashboard" className="text-foreground/80 hover:text-primary transition-colors">
                 My Bookmarks
               </Link>
-              <Button asChild variant="hero">
+              <Button asChild className="btn-hero">
                 <Link to="/dashboard">
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -43,7 +43,7 @@ export default function Home() {
               View your saved tweets in multiple layouts and export them anytime.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button asChild size="lg" variant="hero">
+              <Button asChild size="lg" className="btn-hero">
                 <Link to="/dashboard">
                   <Upload className="mr-2 h-5 w-5" />
                   Start Organizing
@@ -71,7 +71,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* View Modes */}
-            <Card className="bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-all duration-300 hover:border-primary/20">
+            <Card className="card card-hover">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary-gradient rounded-lg flex items-center justify-center mb-4">
                   <Grid3X3 className="h-6 w-6 text-white" />
@@ -91,7 +91,7 @@ export default function Home() {
             </Card>
 
             {/* Gallery View */}
-            <Card className="bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-all duration-300 hover:border-primary/20">
+            <Card className="card card-hover">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary-gradient rounded-lg flex items-center justify-center mb-4">
                   <Images className="h-6 w-6 text-white" />
@@ -110,7 +110,7 @@ export default function Home() {
             </Card>
 
             {/* Card View */}
-            <Card className="bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-all duration-300 hover:border-primary/20">
+            <Card className="card card-hover">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary-gradient rounded-lg flex items-center justify-center mb-4">
                   <CreditCard className="h-6 w-6 text-white" />
@@ -177,7 +177,7 @@ export default function Home() {
             <p className="text-muted-foreground text-lg mb-8">
               Upload your Twitter bookmark export and start exploring your saved content in a whole new way.
             </p>
-            <Button asChild size="lg" variant="hero">
+            <Button asChild size="lg" className="btn-hero">
               <Link to="/dashboard">
                 <Bookmark className="mr-2 h-5 w-5" />
                 Get Started Free

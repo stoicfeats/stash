@@ -10,12 +10,12 @@ export function ExportPanel() {
   return (
     <div className="flex-1 p-6">
       <div className="max-w-2xl mx-auto space-y-8">
-        <div className="bg-card/20 backdrop-blur-md border border-border/20 rounded-lg p-6 shadow-sm hover:bg-card/30 transition-colors">
+        <div className="card card-hover p-6 shadow-sm">
           <h2 className="text-2xl font-semibold text-foreground mb-2">Export Bookmarks</h2>
           <p className="text-muted-foreground">Connect your Twitter account or provide a URL to export your bookmarks.</p>
         </div>
 
-        <Card className="bg-card/20 backdrop-blur-md border-border/20 shadow-sm hover:bg-card/30 transition-colors">
+        <Card className="card card-hover shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-foreground">
               <Twitter className="h-5 w-5 text-blue-400" />
@@ -26,7 +26,7 @@ export function ExportPanel() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button className="w-full" size="lg" variant="hero">
+            <Button className="w-full btn-hero" size="lg">
               <Twitter className="h-4 w-4 mr-2" />
               Connect Twitter Account
             </Button>
@@ -42,7 +42,7 @@ export function ExportPanel() {
           </div>
         </div>
 
-        <Card className="bg-card/20 backdrop-blur-md border-border/20 shadow-sm hover:bg-card/30 transition-colors">
+        <Card className="card card-hover shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-foreground">
               <Link className="h-5 w-5" />
@@ -78,7 +78,7 @@ export function ExportPanel() {
           </CardContent>
         </Card>
 
-        <Card className="bg-card/20 backdrop-blur-md border-border/20 shadow-sm hover:bg-card/30 transition-colors">
+        <Card className="card card-hover shadow-sm">
           <CardHeader>
             <CardTitle className="text-foreground">Export Options</CardTitle>
             <CardDescription className="text-muted-foreground">

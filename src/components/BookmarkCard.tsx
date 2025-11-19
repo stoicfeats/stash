@@ -46,7 +46,7 @@ export function BookmarkCard({ bookmarks }: BookmarkCardProps) {
           <ChevronLeft className="h-4 w-4" />
         </Button>
         
-        <Card className="flex-1 mx-4 bg-card/20 backdrop-blur-md border-border/20 hover:bg-card/30 transition-colors">
+        <Card className="flex-1 mx-4 card card-hover">
           <CardContent className="p-8">
             <div className="flex items-start space-x-4">
               <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center flex-shrink-0">
